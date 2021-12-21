@@ -75,7 +75,7 @@ a{
     background-color: var(--btn-toggle-light);
     cursor: pointer;
     padding: 5px;
-    transition: 1s ease-in-out;
+    transition: all 0.3s ease-in;
 }
 
 .button-toggle + label::before{
@@ -84,11 +84,10 @@ a{
     height: 15px;
     border-radius: 50%;
     position: absolute;
-    top: 2px;
-    right: 2px;
+    inset: 2px 22px 0;
     background-color: var(--white-BG);
     cursor: pointer;
-    transition: 0.3s ease-in-out;
+    transition: all 0.3s ease-in;
 }
 
 .button-toggle:checked + label{
