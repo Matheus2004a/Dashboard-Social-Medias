@@ -45,7 +45,7 @@ a{
 .section-cards-dashboards{
     display: grid;
     justify-content: center;
-    gap: 1rem;
+    gap: 3rem;
     background-color: var(--light-grayish-blue-Card-BG);
     height: 15rem;
     padding: 2rem 0;
@@ -63,6 +63,18 @@ a{
     gap: 0.7rem;
 }
 
+.container-cards span .toggle-off{
+    display: none;
+}
+
+.toggle-on.show ~ .toggle-off,.toggle-off.show ~ .toggle-on{
+    display: block;
+}
+
+.toggle-on.show,.toggle-off.show{
+    display: none;
+}
+
 .section-cards-dashboards i{
     font-size: 2rem;
 }
@@ -72,9 +84,6 @@ a{
 }
 
 .container-cards-dashboards{
-    position: relative;
-    top: 1rem;
-    justify-content: center;
     gap: 2rem;
 }
 
@@ -144,7 +153,7 @@ a{
 .section-overview{
     display: grid;
     justify-content: center;
-    margin: 10rem 0;
+    margin: 10rem auto 2rem;
 }
 
 .section-overview .title-overview{
@@ -166,7 +175,7 @@ a{
     gap: 1.5rem;
 }
 
-.cards-dashboards-overview > span,.cards-dashboards-overview span figure{
+.container-cards,.cards-dashboards-overview > span,.cards-dashboards-overview span figure{
     display: flex;
     justify-content: space-between;
     align-items: center;
