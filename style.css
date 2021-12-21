@@ -78,8 +78,6 @@ a{
 }
 
 .container-cards span{
-    display: flex;
-    align-items: center;
     gap: 0.7rem;
 }
 
@@ -123,8 +121,9 @@ a{
     font-size: 2rem;
 }
 
-.container-cards-dashboards,.cards-dashboard figure{
+.container-cards-dashboards,.cards-dashboard figure,.cards-dashboard span,.container-cards,.container-cards span,.cards-dashboards-overview > span,.cards-dashboards-overview span figure{
     display: flex;
+    align-items: center;
 }
 
 .container-cards-dashboards{
@@ -150,8 +149,6 @@ a{
 }
 
 .cards-dashboard span{
-    display: flex;
-    align-items: center;
     gap: 5px;
 }
 
@@ -223,9 +220,7 @@ a{
 }
 
 .container-cards,.cards-dashboards-overview > span,.cards-dashboards-overview span figure{
-    display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .cards-dashboards-overview span figure{
