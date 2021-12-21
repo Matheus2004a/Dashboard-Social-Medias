@@ -27,7 +27,6 @@
     --white-Text: hsl(0, 0%, 100%);
 
     /* Colors Light Theme */
-    --btn-toggle-light: hsl(230, 22%, 74%);
     --white-BG: hsl(0, 0%, 100%);
     --very-pale-blue-Top-BG-Pattern: hsl(225, 100%, 98%);
     --light-grayish-blue-Card-BG: hsl(227, 47%, 96%);
@@ -37,6 +36,26 @@
     /* Colors change to light theme */
     --toggle-light: hsl(230, 22%, 74%);
 } 
+
+body.change-theme,.section-cards-dashboards.change-theme{
+    background-color: var(--very-dark-blue-BG);
+}
+
+body,.section-cards,.cards,.cards h3{
+    transition: all 0.3s ease-in-out;
+}
+
+.cards.change-theme{
+    background-color: var(--dark-desaturated-blue-Card-BG);
+}
+
+.section-cards.change-theme :is(h1,.title-overview),.cards.change-theme :is(h2,h3),footer.change-theme{
+    color: var(--white-Text);
+}
+
+.section-cards.change-theme p,.container-cards span,.cards figure figcaption,.cards span p,.section-cards.change-theme .cards-dashboard h5{
+    color: var(--toggle-light);
+}
 
 a{
     text-decoration: none;
@@ -49,6 +68,7 @@ a{
     background-color: var(--light-grayish-blue-Card-BG);
     height: 15rem;
     padding: 2rem 0;
+    margin: 0 0 10rem;
 }
 
 .container-cards p{
@@ -72,7 +92,7 @@ a{
     height: 20px;
     border-radius: 20px;
     position: relative;
-    background-color: var(--btn-toggle-light);
+    background-color: var(--toggle-light);
     cursor: pointer;
     padding: 5px;
     transition: all 0.3s ease-in;
@@ -112,10 +132,9 @@ a{
 }
 
 .cards-dashboard{
-    display: grid;
     justify-items: center;
     gap: 1rem;
-    padding: 2rem 4rem;
+    padding: 2rem 0;
     background-color: var(--very-pale-blue-Top-BG-Pattern);
     border-radius: 3px;
 }
@@ -136,16 +155,16 @@ a{
     gap: 5px;
 }
 
-.cards-dashboard span,.infos-overview figcaption{
+.cards-dashboard .infos-overview-up,.cards .infos-overview-up figcaption{
     color: var(--lime-green);
 }
 
-.cards-dashboard span,.infos-overview figcaption,.infos-overview-decline figcaption{
+.cards-dashboard span,.cards-dashboard figure figcaption,.cards-dashboards-overview span figcaption,.infos-overview-decline figcaption{
     font-size: 0.80rem;
     font-weight: 700;
 }
 
-.infos-overview-decline figcaption{
+.cards-dashboard .infos-overview-decline, .cards .infos-overview-decline figcaption{
     color: var(--bright-red);
 }
 
@@ -177,22 +196,26 @@ a{
 .section-overview{
     display: grid;
     justify-content: center;
-    margin: 10rem auto 2rem;
+    gap: 1.5rem;
 }
 
 .section-overview .title-overview{
     color: var(--dark-grayish-blue-Text);
-    margin: 1rem 0;
 }
 
 .container-cards-overview{
     display: grid;
-    grid-template-columns: repeat(4, 35%);
-    gap: 1rem;
+    grid-template-columns: repeat(4, 22.7%);
+    gap: 2rem;
+    row-gap: 1.5rem;
+}
+
+.cards-dashboard,.cards-dashboards-overview{
+    display: grid;
+    width: 15rem;
 }
 
 .cards-dashboards-overview{
-    display: grid;
     padding: 1rem;
     border-radius: 5px;
     background-color: var(--very-pale-blue-Top-BG-Pattern);
@@ -217,4 +240,10 @@ a{
 
 footer{
     text-align: center;
+    color: var(--very-dark-blue-Text);
+    margin: 5rem 0 1rem;
+}
+
+footer a{
+    color: var(--desaturated-blue-Text);
 }
