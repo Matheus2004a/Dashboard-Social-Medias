@@ -1,4 +1,4 @@
-const btnToggleLight = document.querySelector(".toggle-on")
+/* const btnToggleLight = document.querySelector(".toggle-on")
 const btnToggleDark = document.querySelector(".toggle-off")
 
 btnToggleLight.addEventListener("click", () => {
@@ -7,4 +7,4 @@ btnToggleLight.addEventListener("click", () => {
     } else {
         btnToggleDark.classList.toggle("show")
     }
-})
+}) */
