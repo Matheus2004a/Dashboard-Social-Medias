@@ -25,11 +25,12 @@
     --dark-desaturated-blue-Card-BG: hsl(228, 28%, 20%);
     --desaturated-blue-Text: hsl(228, 34%, 66%);
     --white-Text: hsl(0, 0%, 100%);
+    --dark-desaturated-brightness-Card: #363F59;
 
     /* Colors Light Theme */
     --white-BG: hsl(0, 0%, 100%);
     --very-pale-blue-Top-BG-Pattern: hsl(225, 100%, 98%);
-    --light-grayish-blue-Card-BG: hsl(227, 47%, 96%);
+    --light-grayish-blue-Card-BG: hsl(229, 31%, 93%);
     --dark-grayish-blue-Text: hsl(228, 12%, 44%);
     --very-dark-blue-Text: hsl(230, 17%, 14%);
     
@@ -49,12 +50,20 @@ body,.section-cards,.cards,.cards h3{
     background-color: var(--dark-desaturated-blue-Card-BG);
 }
 
+.cards.change-theme:hover{
+    background-color: var(--dark-desaturated-brightness-Card);
+}
+
 .section-cards.change-theme :is(h1,.title-overview),.cards.change-theme :is(h2,h3),footer.change-theme{
     color: var(--white-Text);
 }
 
 .section-cards.change-theme p,.container-cards span,.cards figure figcaption,.cards span p,.section-cards.change-theme .cards-dashboard h5{
     color: var(--toggle-light);
+}
+
+.section-cards.change-theme .container-cards div{
+    border: none;
 }
 
 a{
@@ -65,7 +74,7 @@ a{
     display: grid;
     justify-content: center;
     gap: 3rem;
-    background-color: var(--light-grayish-blue-Card-BG);
+    background-color: var(--very-pale-blue-Top-BG-Pattern);
     height: 15rem;
     padding: 2rem 0;
     margin: 0 0 10rem;
@@ -102,7 +111,7 @@ a{
     height: 15px;
     border-radius: 50%;
     position: absolute;
-    inset: 2px 22px 0;
+    inset: 2.5px 22px 0;
     background-color: var(--white-BG);
     cursor: pointer;
     transition: all 0.3s ease-in;
@@ -115,10 +124,6 @@ a{
 .button-toggle:checked + label::before{
     background-color: var(--very-dark-blue-BG);
     left: calc(100% - 37px);
-}
-
-.section-cards-dashboards i{
-    font-size: 2rem;
 }
 
 .container-cards-dashboards,.cards-dashboard figure,.cards-dashboard span,.container-cards,.container-cards span,.cards-dashboards-overview > span,.cards-dashboards-overview span figure{
@@ -161,7 +166,7 @@ a{
     font-weight: 700;
 }
 
-.cards-dashboard .infos-overview-decline, .cards .infos-overview-decline figcaption{
+.cards-dashboard .infos-overview-decline,.cards .infos-overview-decline figcaption{
     color: var(--bright-red);
 }
 
@@ -188,6 +193,11 @@ a{
 
 .cards-dashboard-youtube{
     border-top-color: var(--youTube);
+}
+
+.cards:hover{
+    cursor: pointer;
+    background-color: var(--light-grayish-blue-Card-BG);
 }
 
 .section-overview{
@@ -241,4 +251,40 @@ footer{
 
 footer a{
     color: var(--desaturated-blue-Text);
+}
+
+@media (max-width: 768px){
+    main{
+        display: grid;
+        gap: 53rem;
+    }
+
+    .container-cards{
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 1rem;
+    }
+
+    .container-cards div{
+        line-height: 1.8rem;
+        padding: 0 0 1rem;
+        border-bottom: 2px solid var(--toggle-light);
+    }
+
+    .container-cards span{
+        justify-content: space-between;
+    }
+    
+    .container-cards-dashboards{
+        display: grid;
+        justify-content: center;
+    }
+    
+    .cards-dashboard,.cards-dashboards-overview{
+        width: 27rem;
+    }
+
+    .container-cards-overview{
+        grid-template-columns: repeat(1, 100%);
+    }
 }
